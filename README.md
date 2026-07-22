@@ -25,23 +25,23 @@ Built strictly using fundamental Python building blocks:
 * **Logical Operators**: Evaluating complex performance rules (`and`, `or`, `not`).
 
 ## Project Flow. 
-1.** Delivery Variables:**
-   Initialized vehicle data, route names, planned vs actual distances, fuel consumption, and performance targets
-2.** Metric Calculations and Updating Distances:**
-   Calculated distance difference, computing fuel efficiency  and updating total distance after diversions using                assignment operators.
-3.** Logical Evaluation and Performance Conditions:**
-   Evaluated boolean flags for maximum distance compliance, target efficiency, overall route efficiency, and operational        review .
-4. **Logistics Route Performance Report:**
-   Printed the formatted terminal summary report for Route 1 (Truck A12 - Lagos to Ibadan)
-5.** Bonus Challenge:**
-   Route 2: Evaluation of identical variable assignment, calculations, and evaluation logic for Route 2 (Truck B07 - Abuja      to Kaduna)
-6. **Comparative Route Analysis:**
-   Comparing Route 1 vs. Route 2 metrics directly using comparison operators.
-7. **Final Managerial Assessment:**
-   Documenting operational takeaways based on calculated results.
+* Delivery Variables:
+  Initialized vehicle data, route names, planned vs actual distances, fuel consumption, and performance targets
+* Metric Calculations and Updating Distances:
+  Calculated distance difference, computing fuel efficiency  and updating total distance after diversions using                assignment operators.
+* Logical Evaluation and Performance Conditions:
+  Evaluated boolean flags for maximum distance compliance, target efficiency, overall route efficiency, and operational        review .
+* Logistics Route Performance Report:
+  Printed the formatted terminal summary report for Route 1 (Truck A12 - Lagos to Ibadan)
+* Bonus Challenge:
+  Route 2: Evaluation of identical variable assignment, calculations, and evaluation logic for Route 2 (Truck B07 - Abuja      to Kaduna)
+* Comparative Route Analysis:
+  Comparing Route 1 vs. Route 2 metrics directly using comparison operators.
+* Final Managerial Assessment:
+  Documenting operational takeaways based on calculated results.
 
 ## Results
-**Route 1: **
+**Route 1:** 
 * Truck A12 (Lagos to Ibadan)
 * Planned Distance: 135 km
 * Updated Distance Covered: 140 km
