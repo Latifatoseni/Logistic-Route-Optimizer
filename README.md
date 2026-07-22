@@ -4,7 +4,9 @@
 The Logistics Route Optimizer is a Python application built for SwiftRoute Engineering &amp; Logistics Ltd. to streamline daily fleet reporting, monitor fuel consumption, and evaluate route efficiency.
 
 ## The Problem Statement
-In fast-paced logistics operations, fleet managers face challenges in manually tracking delivery routes, identifying fuel inefficiencies, and evaluating distance discrepancies caused by unexpected road diversions. Manual reporting is prone to errors, delays, and inconsistent evaluations, making it difficult to flag high-cost routes that require immediate operational intervention.
+In fast-paced logistics operations, fleet managers face challenges in manually tracking delivery routes, identifying fuel inefficiencies, and evaluating distance discrepancies caused by unexpected road diversions. 
+
+Manual reporting is prone to errors, delays, and inconsistent evaluations, making it difficult to flag high-cost routes that require immediate operational intervention.
 
 ## The Solution
 To address this, a Python-based operational tool was built to automate daily route summaries. The script takes raw delivery operational parameters, calculates actual performance metrics, checks compliance against operational targets, and automatically determines whether a route requires operational review.
@@ -26,6 +28,7 @@ Built strictly using fundamental Python building blocks:
 
 ## Project Flow. 
 * **Delivery Variables:**
+
 Initialized vehicle data, route names, planned vs actual distances, fuel consumption, and performance targets
 * **Metric Calculations and Updating Distances:**
 Calculated distance difference, computing fuel efficiency  and updating total distance after diversions using                assignment operators.
