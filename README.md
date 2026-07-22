@@ -48,7 +48,7 @@ Built strictly using fundamental Python building blocks:
 * Updated Distance Covered: 140 km
 * Distance Difference: 7 km
 * Fuel Used: 26 Litres
-* Fuel Efficiency: 4.92 km/litre
+* Fuel Efficiency: 4.92 
 * Within Allowed Distance: True
 * Fuel Efficiency Target Achieved: False
 * Route Efficient: True
@@ -60,8 +60,8 @@ Built strictly using fundamental Python building blocks:
 * Updated Distance Covered: 193 km
 * Distance Difference: 5 km
 * Fuel Used: 32 Litres
-* Fuel Efficiency: 5.78 km/litre (Target: 5.50 km/litre)
-* Within Allowed Distance (<= 200 km): True
+* Fuel Efficiency: 5.78 
+* Within Allowed Distance : True
 * Fuel Efficiency Target Achieved: True
 * Route Efficient: True
 * Operational Review Required: False 
