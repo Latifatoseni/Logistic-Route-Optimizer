@@ -104,7 +104,7 @@ The program successfully processed daily operations for test delivery corridors:
 * Introduce loops (for/while) to automate processing across larger vehicle fleets.
 
 ## Author
-Latifat Omolara Oseni
-Industrial and Production Engineer. Data Analyst. Python Developer
+### Latifat Omolara Oseni
+### Industrial and Production Engineer. Data Analyst. Python Developer
 
 
