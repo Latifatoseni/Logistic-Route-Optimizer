@@ -29,19 +29,25 @@ Built strictly using fundamental Python building blocks:
 ## Project Flow. 
 * **Delivery Variables:**
 
-Initialized vehicle data, route names, planned vs actual distances, fuel consumption, and performance targets
+  Initialized vehicle data, route names, planned vs actual distances, fuel consumption, and performance targets
 * **Metric Calculations and Updating Distances:**
-Calculated distance difference, computing fuel efficiency  and updating total distance after diversions using                assignment operators.
+
+  Calculated distance difference, computing fuel efficiency  and updating total distance after diversions using                assignment operators.
 * **Logical Evaluation and Performance Conditions:**
-Evaluated boolean flags for maximum distance compliance, target efficiency, overall route efficiency, and operational        review .
+
+  Evaluated boolean flags for maximum distance compliance, target efficiency, overall route efficiency, and operational        review .
 * **Logistics Route Performance Report:**
-Printed the formatted terminal summary report for Route 1 (Truck A12 - Lagos to Ibadan)
+
+  Printed the formatted terminal summary report for Route 1 (Truck A12 - Lagos to Ibadan)
 * **Bonus Challenge:**
-Route 2: Evaluation of identical variable assignment, calculations, and evaluation logic for Route 2 (Truck B07 - Abuja      to Kaduna)
+
+  Route 2: Evaluation of identical variable assignment, calculations, and evaluation logic for Route 2 (Truck B07 - Abuja      to Kaduna)
 * **Comparative Route Analysis:**
-Comparing Route 1 vs. Route 2 metrics directly using comparison operators.
+
+  Comparing Route 1 vs. Route 2 metrics directly using comparison operators.
 * **Final Managerial Assessment:**
-Documenting operational takeaways based on calculated results.
+
+  Documenting operational takeaways based on calculated results.
 
 ## Results
 **Route 1:** 
