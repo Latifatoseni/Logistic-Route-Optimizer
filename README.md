@@ -88,16 +88,21 @@ Built strictly using fundamental Python building blocks:
 ## Results
 The program successfully processed daily operations for test delivery corridors:
 * **Truck A12 (Lagos to Ibadan)** stayed within maximum distance constraints (140 km / 145 km) but fell slightly short of its target fuel efficiency (4.92 / 5.00 km/l).
+  
 * **Truck B07 (Abuja to Kaduna)** exceeded its raw fuel efficiency target (5.78 / 5.50 km/l) and stayed within maximum distance limits (193 km / 200 km).
 
 ## Key Findings
 * **Route Efficiency Compliance:** Both Truck A12 and Truck B07 successfully stayed within their maximum allowable distances despite road diversions.
+  
 * **Fuel Target Deviation:** Truck A12 failed to achieve its fuel efficiency target (4.92 km/l vs 5.00 km/l target), triggering an operational review flag.
+  
 * **Cost Optimization Need:** Truck B07 achieved higher efficiency (5.78 km/l vs 5.50 km/l target) and did not require a review, whereas Truck A12's fuel shortfall will increase operational execution costs if unaddressed.
 
 ## Key Learnings
 * **Logic over Complexity**: Complex conditional structures (`if/else`) aren't always necessary; comparison and logical operators can evaluate complex business logic directly.
+  
 * **Data to Insight**: Raw numbers become actionable business decisions when structured into clear operational reports.
+  
 * **Domain Context**: Software development in logistics requires thinking beyond code to consider operational constraints, fuel targets, and cost impacts.
 
 ## Future Improvements
