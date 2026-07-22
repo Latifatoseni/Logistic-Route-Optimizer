@@ -1,0 +1,632 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "87f010ba-f1be-45e6-838e-5f03b1aec29f",
+   "metadata": {},
+   "source": [
+    "# INDUSTRY: SwiftRoute Engineering & Logistics Ltd."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cc30bd63-bbe7-410d-b4f6-5842bf9aeb9e",
+   "metadata": {},
+   "source": [
+    "## An Application Summarising and Reviewing Delivery Route 1 Information"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 43,
+   "id": "3625f335-9abb-4a72-a78a-a8c8bc2878fc",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Delivery Information and its values\n",
+    "delivery_vehicle = \"Truck A12\"\n",
+    "delivery_route = \"Lagos to Ibadan\"\n",
+    "planned_distance = 135  # In Km\n",
+    "actual_distance_covered = 128 # In Km\n",
+    "fuel_used = 26  # In litres\n",
+    "fuel_efficiency_target = 5 \n",
+    "additional_distance_covered = 12 # In Km\n",
+    "maximum_allowed_distance = 145   # In Km\n",
+    "vehicle_availability = True\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 44,
+   "id": "9e7a1237-356b-4353-b42f-e619f4004286",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Distance Difference: 7 km\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Calculate route difference\n",
+    "distance_difference = planned_distance - actual_distance_covered \n",
+    "print(\"Distance Difference:\", distance_difference, \"km\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 45,
+   "id": "1259f6ae-acf3-453c-ab90-b79e5e855d94",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Fuel Efficiency: 4.92\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Calculate Fuel Efficiency\n",
+    "fuel_efficiency = actual_distance_covered / fuel_used\n",
+    "fuel_efficiency = round(fuel_efficiency, 2)\n",
+    "print(\"Fuel Efficiency:\", fuel_efficiency)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 46,
+   "id": "67a06db5-288d-4c97-b402-76b58b1f39f1",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Updated_Distance: 140 Km\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Update distance covered\n",
+    "actual_distance_covered += additional_distance_covered\n",
+    "updated_distance = actual_distance_covered \n",
+    "print(\"Updated_Distance:\", updated_distance, \"Km\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 47,
+   "id": "c7ee728a-a65d-4fd9-9b12-05f97cd1e973",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n",
+      "The vehicle stayed within the maximum allowable distance\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Did the vehicle stay within the maximum allowable distance?\n",
+    "print(updated_distance <= maximum_allowed_distance)\n",
+    "print(\"The vehicle stayed within the maximum allowable distance\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 48,
+   "id": "9b117a58-6785-4070-be06-6030bc7ebe33",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "False\n",
+      "The efficiency target was not met, thus within the acceptable efficiency limit\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Was fuel efficiency target achieved?\n",
+    "print(fuel_efficiency >= fuel_efficiency_target)\n",
+    "print(\"The efficiency target was not met, thus within the acceptable efficiency limit\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 49,
+   "id": "6550f8b2-b45c-4ab6-aca9-b1b52e5dea93",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n",
+      "The route is Efficient\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Determine route performance\n",
+    "print(vehicle_availability and updated_distance <= maximum_allowed_distance)\n",
+    "print(\"The route is Efficient\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 64,
+   "id": "8c5f9b3e-0070-4b40-8fd2-3582a3c699b0",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n",
+      "Operational review is not required\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Is operational rieview required?\n",
+    "print(not (vehicle_availability and updated_distance <= maximum_allowed_distance) or not(fuel_efficiency >= fuel_efficiency_target))\n",
+    "print(\"Operational review is not required\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 63,
+   "id": "c7590789-461f-4c0b-95eb-c5adfa5acd85",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "========================================\n",
+      "LOGISTICS ROUTE PERFORMANCE REPORT\n",
+      "========================================\n",
+      "Delivery Vehicle: Truck A12\n",
+      "Delivery Route: Lagos to Ibadan\n",
+      "Planned Distance: 135 Km\n",
+      "Updated Distance Covered: 140 Km\n",
+      "Distance Differences: 7 Km\n",
+      "Fuel Used: 26 Litres\n",
+      "Fuel Efficiency: 4.92\n",
+      "Fuel Efficiency Target: 5\n",
+      "Maximum Allowed Distance: 145 Km\n",
+      "Within Allowed Distance: True\n",
+      "Fuel Efficiency Target Achieved: False\n",
+      "Vehicle Available: True\n",
+      "Route Efficient: True\n",
+      "Operational Review not Required: True\n",
+      "========================================\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Logistic Route Report\n",
+    "\n",
+    "print(\"========================================\")\n",
+    "print(\"LOGISTICS ROUTE PERFORMANCE REPORT\")\n",
+    "print(\"========================================\")\n",
+    "\n",
+    "print(\"Delivery Vehicle:\", delivery_vehicle)\n",
+    "print(\"Delivery Route:\", delivery_route)\n",
+    "print (\"Planned Distance:\", planned_distance, \"Km\")\n",
+    "print(\"Updated Distance Covered:\", updated_distance, \"Km\")\n",
+    "print(\"Distance Differences:\", distance_difference, \"Km\")\n",
+    "print(\"Fuel Used:\", fuel_used, \"Litres\")\n",
+    "print(\"Fuel Efficiency:\",fuel_efficiency)\n",
+    "print(\"Fuel Efficiency Target:\", fuel_efficiency_target) \n",
+    "print(\"Maximum Allowed Distance:\", maximum_allowed_distance, \"Km\") \n",
+    "print(\"Within Allowed Distance:\",updated_distance <= maximum_allowed_distance )\n",
+    "print(\"Fuel Efficiency Target Achieved:\", fuel_efficiency >= fuel_efficiency_target)\n",
+    "print(\"Vehicle Available:\",vehicle_availability)\n",
+    "print(\"Route Efficient:\", vehicle_availability and updated_distance <= maximum_allowed_distance )\n",
+    "print(\"Operational Review not Required:\", not(vehicle_availability and updated_distance <= maximum_allowed_distance) or \n",
+    "      not(fuel_efficiency >= fuel_efficiency_target))\n",
+    "print(\"========================================\")\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "db17cdad-638b-4abf-829b-4cd99c359b41",
+   "metadata": {},
+   "source": [
+    "## An Application Summarising and Reviewing Delivery Route 2 Information"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 52,
+   "id": "9e7edc9b-f009-4a00-bad0-a04c01844142",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Delivery Information and its values\n",
+    "delivery_vehicle_2 = \"Truck B07\"\n",
+    "delivery_route_2 = \"Abuja to Kaduna\"\n",
+    "planned_distance_2 = 190  # In Km\n",
+    "actual_distance_covered_2 = 185 # In Km\n",
+    "fuel_used_2 = 32  # In litres\n",
+    "fuel_efficiency_target_2 = 5.5\n",
+    "additional_distance_covered_2 = 8 # In Km\n",
+    "maximum_allowed_distance_2 = 200   # In Km\n",
+    "vehicle_availability_2 = True"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 53,
+   "id": "458d21d8-3679-44be-90e1-9ffdc32dc0e2",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Distance Difference_2: 5 km\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Calculate route difference\n",
+    "distance_difference_2 = planned_distance_2 - actual_distance_covered_2 \n",
+    "print(\"Distance Difference_2:\", distance_difference_2, \"km\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 54,
+   "id": "642ce8e8-f943-436a-936d-ae9f40d06741",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Fuel Efficiency_2: 5.78\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Calculate Fuel Efficiency\n",
+    "fuel_efficiency_2 = actual_distance_covered_2 / fuel_used_2\n",
+    "fuel_efficiency_2 = round(fuel_efficiency_2, 2)\n",
+    "print(\"Fuel Efficiency_2:\", fuel_efficiency_2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 55,
+   "id": "94dc1a0e-4f7e-486a-a9e6-260248084baa",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Updated_Distance_2: 193 Km\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Update distance covered\n",
+    "actual_distance_covered_2 += additional_distance_covered_2\n",
+    "updated_distance_2 = actual_distance_covered_2 \n",
+    "print(\"Updated_Distance_2:\", updated_distance_2, \"Km\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 56,
+   "id": "04e3cc44-e1e6-43c2-807f-9b9a1a9c68b5",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n",
+      "The vehicle stayed within the maximum allowable distance\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Did the vehicle stay within the maximum allowable distance?\n",
+    "print(updated_distance_2 <= maximum_allowed_distance_2)\n",
+    "print(\"The vehicle stayed within the maximum allowable distance\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 58,
+   "id": "5c33c041-851f-417e-a94f-f262d07a96b4",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n",
+      "The efficiency target was exceeded, thus out the acceptable efficiency limit\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Was fuel efficiency target achieved?\n",
+    "print(fuel_efficiency_2 >= fuel_efficiency_target_2)\n",
+    "print(\"The efficiency target was exceeded, thus out the acceptable efficiency limit\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 60,
+   "id": "723fdc6b-1d75-4746-a577-7306f456db68",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n",
+      "The route is Efficient\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Determine route performance\n",
+    "print(vehicle_availability_2 and updated_distance_2 <= maximum_allowed_distance_2)\n",
+    "print(\"The route is Efficient\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 61,
+   "id": "1d9e9368-a7f3-4680-a625-8ff6fcf41cf7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "False\n",
+      "Operational review is required\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Is operational rieview required?\n",
+    "print(not (vehicle_availability_2 and updated_distance_2 <= maximum_allowed_distance_2) or not(fuel_efficiency_2 >= fuel_efficiency_target_2))\n",
+    "print(\"Operational review is required\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 65,
+   "id": "a1257a40-0a50-4055-b822-96c2182929e1",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "========================================\n",
+      "LOGISTICS ROUTE PERFORMANCE REPORT\n",
+      "========================================\n",
+      "Delivery Vehicle 2: Truck B07\n",
+      "Delivery Route 2: Abuja to Kaduna\n",
+      "Planned Distance 2: 190 Km\n",
+      "Updated Distance Covered 2: 193 Km\n",
+      "Distance Differences 2: 5 Km\n",
+      "Fuel Used 2: 32 Litres\n",
+      "Fuel Efficiency 2: 5.78\n",
+      "Fuel Efficiency Target 2: 5.5\n",
+      "Maximum Allowed Distance 2: 200 Km\n",
+      "Within Allowed Distance 2: True\n",
+      "Fuel Efficiency Target Achieved 2: True\n",
+      "Vehicle Available 2: True\n",
+      "Route Efficient 2: True\n",
+      "Operational Review not Required: False\n",
+      "========================================\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Logistic Route Report\n",
+    "\n",
+    "print(\"========================================\")\n",
+    "print(\"LOGISTICS ROUTE PERFORMANCE REPORT\")\n",
+    "print(\"========================================\")\n",
+    "\n",
+    "print(\"Delivery Vehicle 2:\", delivery_vehicle_2)\n",
+    "print(\"Delivery Route 2:\", delivery_route_2)\n",
+    "print (\"Planned Distance 2:\", planned_distance_2, \"Km\")\n",
+    "print(\"Updated Distance Covered 2:\", updated_distance_2, \"Km\")\n",
+    "print(\"Distance Differences 2:\", distance_difference_2, \"Km\")\n",
+    "print(\"Fuel Used 2:\", fuel_used_2, \"Litres\")\n",
+    "print(\"Fuel Efficiency 2:\",fuel_efficiency_2)\n",
+    "print(\"Fuel Efficiency Target 2:\", fuel_efficiency_target_2) \n",
+    "print(\"Maximum Allowed Distance 2:\", maximum_allowed_distance_2, \"Km\") \n",
+    "print(\"Within Allowed Distance 2:\",updated_distance_2 <= maximum_allowed_distance_2 )\n",
+    "print(\"Fuel Efficiency Target Achieved 2:\", fuel_efficiency_2 >= fuel_efficiency_target_2)\n",
+    "print(\"Vehicle Available 2:\",vehicle_availability_2)\n",
+    "print(\"Route Efficient 2:\", vehicle_availability_2 and updated_distance_2 <= maximum_allowed_distance_2 )\n",
+    "print(\"Operational Review not Required:\", not(vehicle_availability_2 and updated_distance_2 <= maximum_allowed_distance_2) or \n",
+    "      not(fuel_efficiency_2 >= fuel_efficiency_target_2))\n",
+    "print(\"========================================\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a93455b5-5084-499f-a389-52a2b541fb0a",
+   "metadata": {},
+   "source": [
+    "## Route Optimization Comparison"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 67,
+   "id": "26c4789a-31db-49b8-8336-39fa471975ed",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "False\n",
+      "Vehicle 2 efficiency has higher efficiency\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 1. Vehicle with the higher efficiency\n",
+    "print(fuel_efficiency >= fuel_efficiency_2)\n",
+    "print(\"Vehicle 2 efficiency has higher efficiency\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 69,
+   "id": "996a7d20-dd2e-4df3-9171-76494dbe2fa0",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "False\n",
+      "Vehicle 2 covered the greater distance\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 2. Route that covered the greater distance\n",
+    "print(updated_distance >= updated_distance_2)\n",
+    "print(\"Vehicle 2 covered the greater distance\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 71,
+   "id": "6db783ce-47d5-456a-b367-6b3e647594c1",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n",
+      "True\n",
+      "They are both within the maximum allowed distance\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 3. Route that stayed within acceptable limit\n",
+    "print(updated_distance <= maximum_allowed_distance)\n",
+    "print(updated_distance_2 <= maximum_allowed_distance_2)\n",
+    "print(\"They are both within the maximum allowed distance\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 73,
+   "id": "4d85e70d-7b2d-4f00-a6fd-bf54a550a6c1",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n",
+      "False\n",
+      "Vehicle one alone met the fuel efficiency target\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 4. Vehicle that met the fuel efficiency target\n",
+    "print(fuel_efficiency <= fuel_efficiency_target)\n",
+    "print(fuel_efficiency_2 <= fuel_efficiency_target_2)\n",
+    "print(\"Vehicle one alone met the fuel efficiency target\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 77,
+   "id": "cfd2be32-e3da-4187-9586-0a4d78428752",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n",
+      "False\n",
+      "Vehicle 2 requires an Operational Review\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 5. Delivery that requires Operational Review\n",
+    "print(not (vehicle_availability and updated_distance <= maximum_allowed_distance) or not(fuel_efficiency >= fuel_efficiency_target))\n",
+    "print(not (vehicle_availability_2 and updated_distance_2 <= maximum_allowed_distance_2) or not(fuel_efficiency_2 >= fuel_efficiency_target_2))\n",
+    "print(\"Vehicle 2 requires an Operational Review\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 78,
+   "id": "da002302-03aa-4f7b-8be2-1c6df573a06a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# As a logistics manager, based on the result of the analysed data; It is visible that route one is the more efficient one. \n",
+    "# This is because, it did not exceed the boundary of acceptance with respect to the fuel efficiency target and the maximum allowable distance it covered\n",
+    "# As opposed to the second route which, although did not exceed the maximum allowable distance, exceeded the fuel efficiency target.\n",
+    "# In term of cost, this deviation, will increase the execution cost of Logistics at Swiftroute Engineering limited.\n",
+    "# Consequently, the second route needs to be reviewed for cost optimization."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7de2afa5-ee44-44d8-9a81-6019334e729a",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.14"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
