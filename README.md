@@ -26,19 +26,19 @@ Built strictly using fundamental Python building blocks:
 
 ## Project Flow. 
 * **Delivery Variables:**
-  Initialized vehicle data, route names, planned vs actual distances, fuel consumption, and performance targets
+Initialized vehicle data, route names, planned vs actual distances, fuel consumption, and performance targets
 * **Metric Calculations and Updating Distances:**
-  Calculated distance difference, computing fuel efficiency  and updating total distance after diversions using                assignment operators.
+Calculated distance difference, computing fuel efficiency  and updating total distance after diversions using                assignment operators.
 * **Logical Evaluation and Performance Conditions:**
-  Evaluated boolean flags for maximum distance compliance, target efficiency, overall route efficiency, and operational        review .
+Evaluated boolean flags for maximum distance compliance, target efficiency, overall route efficiency, and operational        review .
 * **Logistics Route Performance Report:**
-  Printed the formatted terminal summary report for Route 1 (Truck A12 - Lagos to Ibadan)
+Printed the formatted terminal summary report for Route 1 (Truck A12 - Lagos to Ibadan)
 * **Bonus Challenge:**
-  Route 2: Evaluation of identical variable assignment, calculations, and evaluation logic for Route 2 (Truck B07 - Abuja      to Kaduna)
+Route 2: Evaluation of identical variable assignment, calculations, and evaluation logic for Route 2 (Truck B07 - Abuja      to Kaduna)
 * **Comparative Route Analysis:**
-  Comparing Route 1 vs. Route 2 metrics directly using comparison operators.
+Comparing Route 1 vs. Route 2 metrics directly using comparison operators.
 * **Final Managerial Assessment:**
-  Documenting operational takeaways based on calculated results.
+Documenting operational takeaways based on calculated results.
 
 ## Results
 **Route 1:** 
@@ -92,7 +92,7 @@ The program successfully processed daily operations for test delivery corridors:
 ## Key Findings
 * **Route Efficiency Compliance:** Both Truck A12 and Truck B07 successfully stayed within their maximum allowable distances despite road diversions.
 * **Fuel Target Deviation:** Truck A12 failed to achieve its fuel efficiency target (4.92 km/l vs 5.00 km/l target), triggering an operational review flag.
-* **Cost Optimization Need: **Truck B07 achieved higher efficiency (5.78 km/l vs 5.50 km/l target) and did not require a review, whereas Truck A12's fuel shortfall will increase operational execution costs if unaddressed.
+* **Cost Optimization Need:** Truck B07 achieved higher efficiency (5.78 km/l vs 5.50 km/l target) and did not require a review, whereas Truck A12's fuel shortfall will increase operational execution costs if unaddressed.
 
 ## Key Learnings
 * **Logic over Complexity**: Complex conditional structures (`if/else`) aren't always necessary; comparison and logical operators can evaluate complex business logic directly.
